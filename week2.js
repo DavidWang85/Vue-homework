@@ -21,6 +21,9 @@ const app = createApp({
                 .then( () => {
                     this.getProducts(); 
                 })
+                .catch( () => {
+                    window.location = './login.html';
+                })
         },
         getProducts(){
             const url = `${site}api/${api_path}/admin/products/all`; 
@@ -28,6 +31,7 @@ const app = createApp({
                 .then(res => {
                     this.products = res.data.products;  //把外部傳來的資料放入自己的products中
                 })
+                
         }
     },
     mounted(){
